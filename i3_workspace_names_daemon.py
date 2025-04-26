@@ -56,7 +56,7 @@ def build_rename(i3, app_icons, args):
                     return icons[app_icons[name_re]]
         if name:
             if "_no_match" in app_icons and app_icons["_no_match"] in icons:
-                return icons[app_icons["_no_match"]] + ('{}'.format(name) if no_match_show_name else '')
+                return icons[app_icons["_no_match"]]
             return name[:length]
         else:
             # no identifiable information about this window
@@ -78,9 +78,9 @@ def build_rename(i3, app_icons, args):
             if uniq:
                 seen = set()
                 names = [x for x in names if x not in seen and not seen.add(x)]
-            names = delim.join(names)
+            names = f" {delim} ".join(names) + " "
             if int(workspace.num) >= 0:
-                newname = u"{}: {}".format(workspace.num, names)
+                newname = u" {}: {} ".format(workspace.num, names)
             else:
                 newname = names
 

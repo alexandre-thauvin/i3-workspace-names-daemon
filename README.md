@@ -2,36 +2,33 @@
 
 This script dynamically updates [i3wm](https://i3wm.org/) workspace names based on the names of the windows therein. 
 
-It also allows users to define an icon to show for a named window from the [Font Awesome](https://origin.fontawesome.com/icons?d=gallery) icon list.
+It also allows users to define an icon to show for a named window from the [Nerd Fonts Icon Picker](https://www.nerdfonts.com/cheat-sheet) icon list.
 
-### tl;dr 
-update i3-bar workspace names to look something like this
+### tl;dr
 
-<img src="https://raw.githubusercontent.com/cboddy/_vim_gifs/master/i3-bar-with-icons.png"></img>
+![image](https://github.com/user-attachments/assets/059e81fa-6c6f-4f08-ba60-d21f011cfd3d)
 
 ### install
 
-Install the [package](https://pypi.org/project/i3-workspace-names-daemon/) from pypi with [pip](https://pypi.org/project/pip/).
+Since it's a fork from the [original repo]() I did not deploy on pip so you have to clone and install:
+```
+git clone git@github.com:alexandre-thauvin/i3-workspace-names-daemon.git
+cd i3-workspace-names-daemon
+pipx install . --force
+```
 
-```
-sudo pip3 install i3-workspace-names-daemon
-```
+I use pipx so I don't have to deal with virtual environment
 
-**NB. if you don't have sudo privileges instead do**
 
-```
-pip3 install --user i3-workspace-names-daemon
-```
 ##### font 
 
-Install the [Font Awesome](https://origin.fontawesome.com/icons?d=gallery) font via your favourite package manager. This is necessary if you want to show an icon instead of a window's name in the i3 status bar. 
+Install the [any nerd fonts](https://www.nerdfonts.com/font-downloads) font via your favourite package manager. This is necessary to show the icons.
+
+In this fork there is no name, only icons, indeed I removed the fallback onto names, if there is no icon found for the given app, it will shows the "arch" icon:  
+![image](https://github.com/user-attachments/assets/3825a6ee-3171-4224-89e4-67bd3fa5662f)
+
+
  
-
-For Debian/Ubuntu et al. 
-
-```
-sudo apt install fonts-font-awesome
-```
 
 **NB: if the glyphs are not rendering make sure the font is installed.**
 
@@ -68,20 +65,18 @@ bindsym $mod+Shift+1 move container to workspace number 1
 Configure what icons to show for what application-windows in the file  ``~/.i3/app-icons.json`` or ``~/.config/i3/app-icons.json`` (in JSON format). For example:
 
 ```
-chris@vulcan: ~$ cat ~/.i3/app-icons.json
+alexandre@thauvin: ~$ cat ~/.i3/app-icons.json
 {
     "firefox": "firefox",
-    "chromium-browser": "chrome",
-    "chrome": "chrome",
-    "google-chrome": "chrome",
-    "x-terminal-emulator": "terminal",
-    "thunderbird": "envelope",
-    "jetbrains-idea-ce": "edit",
-    "nautilus": "folder-open",
-    "clementine": "music",
-    "vlc": "play",
-    "signal": "comment",
-    "_no_match": "question"
+    "kitty": "kitty",
+    "thunderbird": "thunderbird",
+    "dolphin": "dolphin",
+    "Signal": "signal",
+    "Spotify": "spotify",
+    "TelegramDesktop": "telegram",
+    "code-oss": "code",
+    "gitkraken": "gitkraken",
+    "_no_match": "no_match"
 }
 ```
 
@@ -120,7 +115,7 @@ If you want to show only that icon (hiding the name) then use the `--no-match-no
 
 ### picking icons 
 
-The easiest way to pick an icon is to search for one in the [gallery](https://origin.fontawesome.com/icons?d=gallery). **NB: the "pro" icons are not available in the debian package.**
+The easiest way to pick an icon is to search for one in the [Cheat Sheet](https://www.nerdfonts.com/cheat-sheet).
 
 ### windows delimiter
 
