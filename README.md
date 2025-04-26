@@ -4,10 +4,9 @@ This script dynamically updates [i3wm](https://i3wm.org/) workspace names based 
 
 It also allows users to define an icon to show for a named window from the [Nerd Fonts Icon Picker](https://www.nerdfonts.com/cheat-sheet) icon list.
 
-### tl;dr 
-update i3-bar workspace names to look something like this
+### tl;dr
 
-<img src="https://raw.githubusercontent.com/cboddy/_vim_gifs/master/i3-bar-with-icons.png"></img>
+![image](https://github.com/user-attachments/assets/059e81fa-6c6f-4f08-ba60-d21f011cfd3d)
 
 ### install
 
@@ -25,7 +24,9 @@ I use pipx so I don't have to deal with virtual environment
 
 Install the [any nerd fonts](https://www.nerdfonts.com/font-downloads) font via your favourite package manager. This is necessary to show the icons.
 
-In this fork there is no name, only icons, indeed I removed the fallback onto names, if there is no icon found for the given app, it will shows the "arch" icon:
+In this fork there is no name, only icons, indeed I removed the fallback onto names, if there is no icon found for the given app, it will shows the "arch" icon:  
+![image](https://github.com/user-attachments/assets/3825a6ee-3171-4224-89e4-67bd3fa5662f)
+
 
  
 
