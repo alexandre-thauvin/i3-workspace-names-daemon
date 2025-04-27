@@ -10,5 +10,6 @@ icons = {
     "dolphin": "\U000f18b4",
     "thunderbird": "\uf370",
     "code": "\U000f0a1e",
+    "brave": "\ue743",
     "no_match": "\U000f08c7"
 }
